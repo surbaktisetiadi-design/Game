@@ -1,0 +1,102 @@
+export const gameConfig = {
+  world: {
+    groundSize: 220,
+    pathWidth: 6.2,
+    fogColor: 0x9bd3f5,
+    fogNear: 55,
+    fogFar: 185,
+  },
+  player: {
+    height: 2.5,
+    radius: 0.45,
+    walkSpeed: 7.0,
+    sprintSpeed: 12.5,
+    crouchSpeed: 3.5,
+    jumpForce: 9.5,
+    gravity: 24.0,
+    spawnPosition: { x: 0, y: 0, z: 19 },
+  },
+  camera: {
+    fov: 60,
+    near: 0.1,
+    far: 320,
+    distance: 5.8,
+    heightOffset: 2.1,
+    shoulderOffset: 0.85,
+    minPitch: -0.45,
+    maxPitch: 0.85,
+    smoothFactor: 12,
+  },
+  buildings: {
+    house: {
+      name: 'Rumah Tropis (Gedung Matematika)',
+      position: { x: -24, y: 0, z: -18 },
+      quizTopic: 'Matematika',
+    },
+    museum: {
+      name: 'Museum EduVenture',
+      position: { x: 24, y: 0, z: -20 },
+      quizTopic: 'Sejarah & Sains',
+    },
+  },
+  fountain: {
+    position: { x: 0, y: 0, z: 0 },
+  },
+  trees: [
+    { x: -12, z: 12, scale: 1.05, seed: 11 },
+    { x: 12, z: 12, scale: 1.15, seed: 22 },
+    { x: -14, z: -6, scale: 0.95, seed: 33 },
+    { x: 14, z: -6, scale: 1.05, seed: 44 },
+    { x: -36, z: 6, scale: 1.25, seed: 55 },
+    { x: 36, z: 8, scale: 1.15, seed: 66 },
+    { x: -29, z: -34, scale: 1.15, seed: 77 },
+    { x: 30, z: -36, scale: 1.2, seed: 88 },
+    { x: -9, z: -32, scale: 1.0, seed: 99 },
+    { x: 9, z: -34, scale: 0.92, seed: 101 },
+    { x: -22, z: 26, scale: 1.18, seed: 112 },
+    { x: 22, z: 26, scale: 1.08, seed: 123 },
+  ],
+  // Objek batu alam realistis (bongkahan & gugusan batu berlumut)
+  rocks: [
+    { x: -7.5, z: 7.5, radius: 1.25, seed: 1, cluster: true },
+    { x: 8.2, z: 7.0, radius: 1.05, seed: 2, cluster: true },
+    { x: -8.5, z: -8.2, radius: 1.4, seed: 3, cluster: true },
+    { x: 8.5, z: -7.8, radius: 1.15, seed: 4, cluster: true },
+    { x: -15.5, z: -12.5, radius: 1.55, seed: 5, cluster: true },
+    { x: -34.5, z: -15.0, radius: 1.8, seed: 6, cluster: true },
+    { x: 13.5, z: -15.5, radius: 1.3, seed: 7, cluster: true },
+    { x: 36.0, z: -16.5, radius: 1.9, seed: 8, cluster: true },
+    { x: -18.0, z: 18.0, radius: 1.6, seed: 9, cluster: true },
+    { x: 18.5, z: 17.5, radius: 1.45, seed: 10, cluster: true },
+    { x: -5.2, z: -26.0, radius: 1.35, seed: 11, cluster: true },
+    { x: 6.0, z: -27.5, radius: 1.5, seed: 12, cluster: true },
+    { x: -28.0, z: 14.0, radius: 2.1, seed: 13, cluster: true },
+    { x: 29.0, z: 15.0, radius: 1.75, seed: 14, cluster: true },
+  ],
+  quizzes: {
+    Matematika: [
+      {
+        q: 'Sebuah ruangan pada Rumah Tropis memiliki panjang 6 m, lebar 4 m, dan tinggi 3 m. Berapakah volumenya?',
+        options: ['72 m³', '54 m³', '24 m³', '13 m³'],
+        answer: 0,
+      },
+      {
+        q: 'Jika Pak Guru berjalan sejauh 12 meter ke utara lalu 5 meter ke timur, berapakah jarak terpendek dari titik awal?',
+        options: ['17 meter', '13 meter', '15 meter', '10 meter'],
+        answer: 1,
+      },
+    ],
+    'Sejarah & Sains': [
+      {
+        q: 'Di Museum EduVenture terdapat artefak emas di lantai 2. Gaya apakah yang menarik benda jatuh ke bawah?',
+        options: ['Gaya Gesek', 'Gaya Magnet', 'Gaya Gravitasi', 'Gaya Pegas'],
+        answer: 2,
+      },
+      {
+        q: 'Batu andesit yang banyak ditemukan di taman dan arsitektur Indonesia termasuk jenis batuan apa?',
+        options: ['Batuan Sedimen', 'Batuan Beku', 'Batuan Metamorf', 'Batuan Kapur'],
+        answer: 1,
+      },
+    ],
+  },
+};
