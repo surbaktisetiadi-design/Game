@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>EduVenture 3D - Petualangan Edukasi</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+
+  <!-- HUD & UI Overlay -->
+  <div id="ui-layer">
+    <div id="top-bar">
+      <div class="badge">🎓 <strong>EduVenture 3D</strong></div>
+      <div id="score-box" class="badge">Skor Kuis: <span id="score-val">0</span></div>
+      <div id="location-box" class="badge">📍 Area Terbuka</div>
+    </div>
+
+    <div id="crosshair">+</div>
+
+    <!-- Prompt Interaksi Kuis -->
+    <div id="interact-prompt" class="hidden">
+      Tekan <strong>[E]</strong> atau Ketuk untuk Kuis Edukasi
+    </div>
+
+    <!-- Petunjuk Kontrol PC -->
+    <div id="controls-hint">
+      <strong>Kontrol PC:</strong> Klik Layar = Kunci Mouse | WASD = Jalan | Shift = Lari | Spasi = Lompat | C = Jongkok | E = Kuis
+    </div>
+
+    <!-- Kontrol Sentuh (HP / Tablet) -->
+    <div id="mobile-controls">
+      <div id="joystick-zone">
+        <div id="joystick-base">
+          <div id="joystick-stick"></div>
+        </div>
+      </div>
+      <div id="touch-look-zone"></div>
+      <div id="action-buttons">
+        <button id="btn-interact" class="action-btn hidden">❓</button>
+        <button id="btn-crouch" class="action-btn">🧎</button>
+        <button id="btn-sprint" class="action-btn">🏃</button>
+        <button id="btn-jump" class="action-btn jump-btn">⬆️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Kuis Edukasi (Langkah 4 Roadmap) -->
+  <div id="quiz-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="quiz-title">Kuis EduVenture</h2>
+        <button id="close-quiz" class="close-btn">&times;</button>
+      </div>
+      <p id="quiz-question">Pertanyaan akan muncul di sini...</p>
+      <div id="quiz-options"></div>
+      <p id="quiz-feedback"></p>
+    </div>
+  </div>
+
+  <!-- Loading Screen (Langkah 6 Roadmap) -->
+  <div id="loading-screen">
+    <div class="loader-box">
+      <h1>🎓 EduVenture 3D</h1>
+      <p>Menyiapkan Dunia Belajar Interaktif...</p>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
